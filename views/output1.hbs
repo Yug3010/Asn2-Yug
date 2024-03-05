@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <style>
+        /* Add your CSS styles here */
+        .product {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 90%;
+        }
+        .product h3 {
+            margin-top: 0;
+        }
+        .product p {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search Results</h1>
+    <div class="products">
+        {{#each data}}
+            <div class="product">
+                <h3>{{this.title}}</h3>
+            </div>
+        {{/each}}
+        {{#if data.length}}
+            <!-- If there are no results, you can display a message here -->
+        {{else}}
+            <p>No matching products found.</p>
+        {{/if}}
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!-- views/data.hbs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Page</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        /* Style for rows with zero reviews */
+        .zero-reviews {
+            background-color: red; /* light red */
+        }
+    </style>
+</head>
+<body>
+    <h1>Data Page</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Reviews</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each data}}
+            <tr {{#if (isEqualZero reviews)}}class="zero-reviews"{{/if}}>
+                <td>{{title}}</td>
+                <td>{{customReviews reviews}}</td>
+            </tr>  
+            {{/each}}
+        </tbody>
+    </table>
+</body>
+</html>

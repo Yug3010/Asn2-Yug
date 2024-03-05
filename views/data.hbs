@@ -1,0 +1,63 @@
+<!-- data.hbs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Page</title>
+  <style>
+   
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h1>Data Page</h1>
+  <table>
+    <tbody>
+      {{#each data}}
+      <tr>
+        <td>ASIN: {{this.asin}}</td>
+      </tr>
+      <tr>
+        <td>Title: {{this.title}}</td>
+      </tr>
+      <tr>
+        <td>Image URL: {{this.imgUrl}}</td>
+      </tr>
+      <tr>
+        <td>Stars: {{this.stars}}</td>
+      </tr>
+      <tr>
+        <td>Reviews: {{this.reviews}}</td>
+      </tr>
+      <tr>
+        <td>Price: {{this.price}}</td>
+      </tr>
+      <tr>
+        <td>List Price: {{this.listPrice}}</td>
+      </tr>
+      <tr>
+        <td>Category Name: {{this.categoryName}}</td>
+      </tr>
+      <tr>
+        <td>Best Seller: {{this.isBestSeller}}</td>
+      </tr>
+      <tr>
+        <td>Bought In Last Month: {{this.boughtInLastMonth}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</body>
+</html>
